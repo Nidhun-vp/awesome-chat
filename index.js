@@ -8,12 +8,13 @@ app.use(cors());
 
 const server = http.createServer(app);
 
-// 🔴 THIS LINE WAS MISSING / OUT OF SCOPE
 const io = new Server(server, {
   cors: {
-    origin: "*",
-  },
+    origin: "https://awesome-chat-front.vercel.app",
+    methods: ["GET", "POST"]
+  }
 });
+
 
 let waitingQueue = [];
 
